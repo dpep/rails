@@ -629,6 +629,10 @@ class HashWithIndifferentAccessTest < ActiveSupport::TestCase
     # Should preserve class for subclasses
     h = IndifferentHash.new
     assert_equal h.class, h.dup.class
+
+    # Should preserve instance variables
+    h.instance_variable_set(:@foo, "bar")
+    assert_equal "bar", h.dup.instance_variable_get(:@foo)
   end
 
   def test_nested_dig_indifferent_access

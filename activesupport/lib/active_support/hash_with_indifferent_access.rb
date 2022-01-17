@@ -256,6 +256,10 @@ module ActiveSupport
     def dup
       self.class.new(self).tap do |new_hash|
         set_defaults(new_hash)
+
+        instance_variables.each do |x|
+          new_hash.instance_variable_set(x, instance_variable_get(x))
+        end
       end
     end
 

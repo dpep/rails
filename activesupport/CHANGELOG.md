@@ -1,3 +1,4 @@
+*   HashWithIndifferentAccess#dup now copies instance variables
 *   Fix `Class#descendants` and `DescendantsTracker#descendants` compatibility with Ruby 3.1.
 
     [The native `Class#descendants` was reverted prior to Ruby 3.1 release](https://bugs.ruby-lang.org/issues/14394#note-33),
